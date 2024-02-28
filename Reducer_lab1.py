@@ -22,15 +22,16 @@ import sys
 dict_ip_count = {}
 
 for line in sys.stdin:
-    line = line.strip()
-    hour, ip, num = line.split('\t')
-    try:
-        num = int(num)
-        dict_ip_count[(hour, ip)] = dict_ip_count.get(ip, 0) + num
+    print line
+#     line = line.strip()
+#     hour, ip, num = line.split('\t')
+#     try:
+#         num = int(num)
+#         dict_ip_count[(hour, ip)] = dict_ip_count.get(ip, 0) + num
 
-    except ValueError:
-        pass
+#     except ValueError:
+#         pass
 
-sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0))
-for ip, count in sorted_dict_ip_count:
-    print '%s\t%s' % (hour, ip, count)
+# sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0))
+# for ip, count in sorted_dict_ip_count:
+#     print '%s\t%s' % (hour, ip, count)
