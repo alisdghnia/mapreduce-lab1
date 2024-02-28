@@ -22,7 +22,6 @@ for (hour, ip), count in hashmap.items():
     if hour in total_count:
         total_count[hour] += count
 
-print total_count
 
 for hour, counts in total_count.items():
     top3 = sorted([(count, ip) for (h, ip), count in hashmap.items() if h == hour], reverse=True)[:3]
