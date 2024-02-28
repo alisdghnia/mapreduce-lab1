@@ -11,7 +11,7 @@ import sys
 
 
 hashmap = {}
-pat = re.compile('(?P<ip>\d+.\d+.\d+.\d+).*?\d{4}:(?P<hour>\d{2}):\d{2}.*? ')
+pat = re.compile('(?P<ip>\d+\.\d+\.\d+\.\d+).\[(?P<datetime>\d+/[a-zA-Z]+/\d+:(?P<hour>\d+):\d+:\d+).?"\w+ (?P<subdir>.*?)')
 for line in sys.stdin:
     match = pat.search(line)
     if match:
