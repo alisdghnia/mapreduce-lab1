@@ -19,8 +19,7 @@ import sys
 # for ip, count in sorted_dict_ip_count:
 #     print '%s\t%s' % (ip, count)
 
-
-for line in sys.stdin:
-    line = line.strip()
-
-    print '%s\t%s' % line
+for hour, counts in sys.stdin.items():
+    top3 = sorted([(count, ip) for (h, ip), count in hashmap.items() if h == hour], reverse=True)[:3]
+    for count, ip in top3:
+        print '%s\t%s\t%s' % (hour, ip, count)
