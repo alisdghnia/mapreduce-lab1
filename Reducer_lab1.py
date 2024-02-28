@@ -33,7 +33,7 @@ for line in sys.stdin:
 
 sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0))
 for ip, count in sorted_dict_ip_count:
-    print('%s\t%s' % (hour, ip, count))
+    print '%s\t%s' % (hour, ip, count)
 #     line = line.strip()
 #     hour, ip, num = line.split('\t')
 #     try:
