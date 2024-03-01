@@ -10,21 +10,17 @@ import sys
 from operator import itemgetter
 from collections import defaultdict
 
-# create a dictionary
-dict_hour_ip_count = defaultdict(lambda: defaultdict(int))
+dict_hour_ip_count = {}
 
-# get output from Mapper
+
+counter = 0
 for line in sys.stdin:
     line = line.strip()
     hour_ip, count = line.split('\t', 1)
-    try:
-        count = int(count)
-        dict_hour_ip_count[hour_ip[:5]][hour_ip[6:]] += count
-    except ValueError:
-        pass
+    hour = hour_ip[:7]
+    ip = hour_ip[7:]
+    print('%s%s\t%s' % (hour, ip, count))
 
-# sort hour+ip, get top 3
-for hour, ips in dict_hour_ip_count.items():
-    sorted_ips = sorted(ips.items(), key=itemgetter(1), reverse=True)[:3]
-    for ip, count in sorted_ips:
-        print('%s\t%s\t%s' % (hour, ip, count))
+    counter += 1
+    if counter % 3 == 0:
+        print()
