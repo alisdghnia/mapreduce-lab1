@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 27 17:11:53 2024
 
-@author: yanchiliu
-"""
-#!/usr/bin/python
 import sys
 from operator import itemgetter
 from collections import defaultdict
